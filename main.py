@@ -5,7 +5,6 @@ app = FastAPI()
 
 @app.get("/")
 def home():
-    # HTML 페이지 생성
     html_content = """
     <!DOCTYPE html>
     <html>
@@ -25,7 +24,6 @@ def home():
 
 @app.get("/statistics")
 def get_statistics():
-    # 예시 통계 데이터
     statistics = {
         "mean": {"feature1": 5.5, "feature2": 3.2},
         "std_dev": {"feature1": 1.2, "feature2": 0.8},
@@ -34,10 +32,8 @@ def get_statistics():
 
 @app.get("/distribution-plot")
 def get_distribution_plot():
-    # 데이터 분포 그래프 반환
     return FileResponse("static/data_distribution.png")
 
 @app.get("/pca-plot")
 def get_pca_plot():
-    # PCA 결과 그래프 반환
     return FileResponse("static/data_distribution.png")
